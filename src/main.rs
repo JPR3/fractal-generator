@@ -15,7 +15,7 @@ pub fn main() -> Result<(), String> {
         .build()
         .map_err(|e| e.to_string())?;
 
-    let border_coords = fractal_generator::calculate_points(11);
+    let border_coords = fractal_generator::calculate_points(3);
     let renderer = Renderer::new(window, border_coords)?;
     generator_logic::generate(sdl_context, renderer)?;
     Ok(())

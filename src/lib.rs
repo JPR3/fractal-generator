@@ -15,8 +15,8 @@ pub fn calculate_points(n: i32) -> Vec<(i32, i32)> {
             _ => angle as f32 * interval + (PI * 3.0 / 2.0),
         };
         points.push((
-            ((f32::cos(radian_angle)) * RADIUS as f32) as i32 + WINDOW_WIDTH as i32 / 2,
-            ((f32::sin(radian_angle)) * RADIUS as f32) as i32 + WINDOW_HEIGHT as i32 / 2,
+            ((f32::cos(radian_angle)) * RADIUS as f32).round() as i32 + WINDOW_WIDTH as i32 / 2,
+            ((f32::sin(radian_angle)) * RADIUS as f32).round() as i32 + WINDOW_HEIGHT as i32 / 2,
         ));
     }
     points
