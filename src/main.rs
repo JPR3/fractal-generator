@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 extern crate sdl2;
 use fractal_generator::generator_logic;
 use fractal_generator::rend::Renderer;
