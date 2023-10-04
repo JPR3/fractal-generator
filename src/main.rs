@@ -7,7 +7,6 @@ use std::env;
 //TODO accept argument
 pub fn main() -> Result<(), String> {
     let args: Vec<String> = env::args().collect();
-    dbg!(&args);
     let sides = match args.len() {
         1 => 3,
         2 => match args[1].parse::<i32>() {
