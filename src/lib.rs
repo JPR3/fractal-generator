@@ -1,23 +1,11 @@
-#[macro_use]
-extern crate lazy_static;
-
 use std::f32::consts::PI;
 pub mod generator_logic;
 pub mod rend;
-use std::collections::HashMap;
 
 pub const WINDOW_WIDTH: u32 = 800;
 pub const WINDOW_HEIGHT: u32 = 450;
 const RADIUS: u32 = (WINDOW_HEIGHT - 50) / 2;
-lazy_static! {
-    static ref SQRTS: HashMap<u32, f32> = {
-        let mut m = HashMap::new();
-        for num in 1..=RADIUS * 2 {
-            m.insert(num, f32::sqrt(num as f32));
-        }
-        m
-    };
-}
+
 pub fn calculate_vertices(n: i32) -> Vec<(i32, i32)> {
     let interval: f32 = 2.0 * PI / n as f32;
     let mut points: Vec<(i32, i32)> = Vec::new();
